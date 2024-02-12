@@ -1,0 +1,3 @@
+Group-1   9.375     
+Group-2   -nan(ind) 
+Group-3   -nan(ind) 
