@@ -9,13 +9,13 @@ bool four(int num) {return num >= 8 && num < 10;}
 bool three(int num) {return num >= 6 && num < 8;}
 
 void outputStudentInfo(const Student& student,fstream& outputFile) {
-    outputFile << "Ïğ³çâèùå: " << student.surname << std::endl
-        << "²ì'ÿ: " << student.name << std::endl
-        << "Ãğóïà: " << student.group << std::endl
-        << "Ìàòåìàòèêà: " << student.math.grade << std::endl
-        << "Ô³çèêà: " << student.physics.grade << std::endl
-        << "Àíãë³éñüêà: " << student.english.grade << std::endl
-        << "Óêğà¿íñüêà: " << student.ukrainian.grade << std::endl << std::endl;
+    outputFile << "Ïğ³çâèùå: " << student.surname << endl
+        << "²ì'ÿ: " << student.name << endl
+        << "Ãğóïà: " << student.group << endl
+        << "Ìàòåìàòèêà: " << student.math << endl
+        << "Ô³çèêà: " << student.physics << endl
+        << "Àíãë³éñüêà: " << student.english << endl
+        << "Óêğà¿íñüêà: " << student.ukrainian << endl << endl;
 }
 
 
@@ -55,43 +55,43 @@ void fourth() {
                 subject1Bool = false;
                 subject2Bool = false;
                 if (strcmp(subject1, "math")==0) {
-                    if (five(student.math.grade) || four(student.math.grade)) {
+                    if (five(student.math) || four(student.math)) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "physics") == 0) {
-                    if (five(student.physics.grade) || four(student.physics.grade)) {
+                    if (five(student.physics) || four(student.physics)) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "english") == 0) {
-                    if (five(student.english.grade) || four(student.english.grade)) {
+                    if (five(student.english) || four(student.english)) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "ukrainian") == 0) {
-                    if (five(student.ukrainian.grade) || four(student.ukrainian.grade)) {
+                    if (five(student.ukrainian) || four(student.ukrainian)) {
                         subject1Bool = true;
                     }
                 }
                 //-----------------------
                 if (strcmp(subject2, "math") == 0) {
-                    if (five(student.math.grade) || four(student.math.grade)) {
+                    if (five(student.math) || four(student.math)) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "physics") == 0) {
-                    if (five(student.physics.grade) || four(student.physics.grade)) {
+                    if (five(student.physics) || four(student.physics)) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "english") == 0) {
-                    if (five(student.english.grade) || four(student.english.grade)) {
+                    if (five(student.english ) || four(student.english )) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "ukrainian") == 0) {
-                    if (five(student.ukrainian.grade) || four(student.ukrainian.grade)) {
+                    if (five(student.ukrainian ) || four(student.ukrainian )) {
                         subject2Bool = true;
                     }
                 }
@@ -136,65 +136,65 @@ void fourth() {
                 subject2Bool = false;
                 subject3Bool = false;
                 if (strcmp(subject1, "math") == 0) {
-                    if (three(student.math.grade) || four(student.math.grade)) {
+                    if (three(student.math ) || four(student.math )) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "physics") == 0) {
-                    if (three(student.physics.grade) || four(student.physics.grade)) {
+                    if (three(student.physics ) || four(student.physics )) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "english") == 0) {
-                    if (three(student.english.grade) || four(student.english.grade)) {
+                    if (three(student.english ) || four(student.english )) {
                         subject1Bool = true;
                     }
                 }
                 else if (strcmp(subject1, "ukrainian") == 0) {
-                    if (three(student.ukrainian.grade) || four(student.ukrainian.grade)) {
+                    if (three(student.ukrainian ) || four(student.ukrainian )) {
                         subject1Bool = true;
                     }
                 }
                 //-----------------------
                 if (strcmp(subject2, "math") == 0) {
-                    if (three(student.math.grade) || four(student.math.grade)) {
+                    if (three(student.math ) || four(student.math )) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "physics") == 0) {
-                    if (three(student.physics.grade) || four(student.physics.grade)) {
+                    if (three(student.physics ) || four(student.physics )) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "english") == 0) {
-                    if (three(student.english.grade) || four(student.english.grade)) {
+                    if (three(student.english ) || four(student.english )) {
                         subject2Bool = true;
                     }
                 }
                 else if (strcmp(subject2, "ukrainian") == 0) {
-                    if (three(student.ukrainian.grade) || four(student.ukrainian.grade)) {
+                    if (three(student.ukrainian ) || four(student.ukrainian )) {
                         subject2Bool = true;
                     }
                 }
 
                 //-----------------------
                 if (strcmp(subject3, "math") == 0) {
-                    if (three(student.math.grade) || four(student.math.grade)) {
+                    if (three(student.math ) || four(student.math )) {
                         subject3Bool = true;
                     }
                 }
                 else if (strcmp(subject3, "physics") == 0) {
-                    if (three(student.physics.grade) || four(student.physics.grade)) {
+                    if (three(student.physics ) || four(student.physics )) {
                         subject3Bool = true;
                     }
                 }
                 else if (strcmp(subject3, "english") == 0) {
-                    if (three(student.english.grade) || four(student.english.grade)) {
+                    if (three(student.english ) || four(student.english )) {
                         subject3Bool = true;
                     }
                 }
                 else if (strcmp(subject3, "ukrainian") == 0) {
-                    if (three(student.ukrainian.grade) || four(student.ukrainian.grade)) {
+                    if (three(student.ukrainian ) || four(student.ukrainian )) {
                         subject3Bool = true;
                     }
                 }
@@ -247,87 +247,87 @@ void fourth() {
                     subject2Bool = false;
                     subject3Bool = false;
                     if (strcmp(subject1, "math") == 0) {
-                        if (three(student.math.grade) || five(student.math.grade)) {
+                        if (three(student.math ) || five(student.math )) {
                             subject1Bool = true;
                         }
                     }
                     else if (strcmp(subject1, "physics") == 0) {
-                        if (three(student.physics.grade) || five(student.physics.grade)) {
+                        if (three(student.physics ) || five(student.physics )) {
                             subject1Bool = true;
                         }
                     }
                     else if (strcmp(subject1, "english") == 0) {
-                        if (three(student.english.grade) || five(student.english.grade)) {
+                        if (three(student.english ) || five(student.english )) {
                             subject1Bool = true;
                         }
                     }
                     else if (strcmp(subject1, "ukrainian") == 0) {
-                        if (three(student.ukrainian.grade) || five(student.ukrainian.grade)) {
+                        if (three(student.ukrainian ) || five(student.ukrainian )) {
                             subject1Bool = true;
                         }
                     }
                     //-----------------------
                     if (strcmp(subject2, "math") == 0) {
-                        if (three(student.math.grade) || five(student.math.grade)) {
+                        if (three(student.math ) || five(student.math )) {
                             subject2Bool = true;
                         }
                     }
                     else if (strcmp(subject2, "physics") == 0) {
-                        if (three(student.physics.grade) || five(student.physics.grade)) {
+                        if (three(student.physics ) || five(student.physics )) {
                             subject2Bool = true;
                         }
                     }
                     else if (strcmp(subject2, "english") == 0) {
-                        if (three(student.english.grade) || five(student.english.grade)) {
+                        if (three(student.english ) || five(student.english )) {
                             subject2Bool = true;
                         }
                     }
                     else if (strcmp(subject2, "ukrainian") == 0) {
-                        if (three(student.ukrainian.grade) || five(student.ukrainian.grade)) {
+                        if (three(student.ukrainian ) || five(student.ukrainian )) {
                             subject2Bool = true;
                         }
                     }
 
                     //-----------------------
                     if (strcmp(subject3, "math") == 0) {
-                        if (three(student.math.grade) || five(student.math.grade)) {
+                        if (three(student.math ) || five(student.math )) {
                             subject3Bool = true;
                         }
                     }
                     else if (strcmp(subject3, "physics") == 0) {
-                        if (three(student.physics.grade) || five(student.physics.grade)) {
+                        if (three(student.physics ) || five(student.physics )) {
                             subject3Bool = true;
                         }
                     }
                     else if (strcmp(subject3, "english") == 0) {
-                        if (three(student.english.grade) || five(student.english.grade)) {
+                        if (three(student.english ) || five(student.english )) {
                             subject3Bool = true;
                         }
                     }
                     else if (strcmp(subject3, "ukrainian") == 0) {
-                        if (three(student.ukrainian.grade) || five(student.ukrainian.grade)) {
+                        if (three(student.ukrainian ) || five(student.ukrainian )) {
                             subject3Bool = true;
                         }
                     }
 
                     //-----------------------
                     if (strcmp(subject4, "math") == 0) {
-                        if (three(student.math.grade) || five(student.math.grade)) {
+                        if (three(student.math ) || five(student.math )) {
                             subject4Bool = true;
                         }
                     }
                     else if (strcmp(subject4, "physics") == 0) {
-                        if (three(student.physics.grade) || five(student.physics.grade)) {
+                        if (three(student.physics ) || five(student.physics )) {
                             subject4Bool = true;
                         }
                     }
                     else if (strcmp(subject4, "english") == 0) {
-                        if (three(student.english.grade) || five(student.english.grade)) {
+                        if (three(student.english ) || five(student.english )) {
                             subject4Bool = true;
                         }
                     }
                     else if (strcmp(subject4, "ukrainian") == 0) {
-                        if (three(student.ukrainian.grade) || five(student.ukrainian.grade)) {
+                        if (three(student.ukrainian ) || five(student.ukrainian )) {
                             subject4Bool = true;
                         }
                     }

@@ -12,6 +12,8 @@
 
 using namespace std;
 
+
+
 void main() {
     //setlocale(0, "ukr");
     SetConsoleOutputCP(1251);
@@ -73,5 +75,8 @@ void main() {
             cout << "Невiрний вибiр. Спробуйте ще раз." << endl;
         }
     } while (choice != 7);
+
+    
+
 
 }

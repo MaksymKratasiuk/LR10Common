@@ -29,18 +29,15 @@ void readStudent() {
     cin.getline(student.name, STUDENT_NAME_LENGTH);
     cout << "Група: ";
     cin.getline(student.group, GROUP_NAME_LENGTH);
-    strcpy_s(student.english.name, "english");
-    strcpy_s(student.math.name, "math");
-    strcpy_s(student.ukrainian.name, "ukrainian");
-    strcpy_s(student.physics.name, "physics");
+    
     cout << "Оцінка з математики: ";
-    cin >> student.math.grade;
+    cin >> student.math;
     cout << "Оцінка з фізики: ";
-    cin >> student.physics.grade;
+    cin >> student.physics;
     cout << "Оцінка з англійської: ";
-    cin >> student.english.grade;
+    cin >> student.english;
     cout << "Оцінка з української: ";
-    cin >> student.ukrainian.grade;
+    cin >> student.ukrainian;
 
 
     writeStudentToFile(student);

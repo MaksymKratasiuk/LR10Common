@@ -5,7 +5,7 @@
 using namespace std;
 
 double calculateAverage(const Student& student) {
-    return (student.math.grade + student.physics.grade + student.english.grade + student.ukrainian.grade) / 4.0;
+    return (student.math + student.physics + student.english + student.ukrainian) / 4.0;
 }
 
 
@@ -37,10 +37,10 @@ void smallestAvarage() {
         textFile << "Прізвище: " << smallStudent.surname << endl
             << "Ім'я: " << smallStudent.name << endl
             << "Група: " << smallStudent.group << endl
-            << "Математика: " << smallStudent.math.grade << endl
-            << "Фізика: " << smallStudent.physics.grade << endl
-            << "Англійська: " << smallStudent.english.grade << endl
-            << "Українська: " << smallStudent.ukrainian.grade << endl << endl;
+            << "Математика: " << smallStudent.math << endl
+            << "Фізика: " << smallStudent.physics << endl
+            << "Англійська: " << smallStudent.english << endl
+            << "Українська: " << smallStudent.ukrainian << endl << endl;
         textFile.close();
     }
     else {

@@ -42,10 +42,10 @@ void same_surname(string surname) {
                     found = true;
                     output << "Прізвище: " << student.surname << endl
                         << "Ім'я: " << student.name << endl
-                        << "Математика: " << student.math.grade << endl
-                        << "Фізика: " << student.physics.grade << endl
-                        << "Англійська: " << student.english.grade << endl
-                        << "Українська: " << student.ukrainian.grade << endl << endl;
+                        << "Математика: " << student.math << endl
+                        << "Фізика: " << student.physics << endl
+                        << "Англійська: " << student.english << endl
+                        << "Українська: " << student.ukrainian << endl << endl;
                 }
             }
             if (!found) output << "Немає\n";

@@ -10,20 +10,19 @@ void printStudentData(const Student& student) {
     cout << "Group: " << student.group <<  endl;
 
     cout << "Math:" << endl;
-    cout << "  Name: " << student.math.name <<  endl;
-    cout << "  Grade: " << student.math.grade <<  endl;
+    cout << "  Grade: " << student.math <<  endl;
 
     cout << "Physics:" <<  endl;
-    cout << "  Name: " << student.physics.name <<  endl;
-    cout << "  Grade: " << student.physics.grade <<  endl;
+
+    cout << "  Grade: " << student.physics <<  endl;
 
     cout << "English:" <<  endl;
-    cout << "  Name: " << student.english.name <<  endl;
-    cout << "  Grade: " << student.english.grade <<  endl;
+
+    cout << "  Grade: " << student.english <<  endl;
 
     cout << "Ukrainian:" <<  endl;
-    cout << "  Name: " << student.ukrainian.name <<  endl;
-    cout << "  Grade: " << student.ukrainian.grade <<  endl;
+
+    cout << "  Grade: " << student.ukrainian <<  endl;
 }
 
 void readAndPrintBinaryFile(const  string& filename) {
