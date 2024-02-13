@@ -92,20 +92,16 @@ void second() {
             index = space + 1;
             space = groupList.find(' ', index);
             file.open("students.bin", ios::binary);
-          //  file.seekg(0);
-            while (file.read((char*)&student, sizeof(Student))) {
+           while (file.read((char*)&student, sizeof(Student))) {
                if (!strcmp(student.group,groupName.c_str())) {
                    count++;
                    sum += calculateAverage(student);
                }
                
             }
-            //if (count != 0)
                 avarage = sum / count;
-                cout << avarage << endl;
-           /* else
-                avarage = 0;*/
-            strcpy_s(group.groupName, groupName.c_str());
+                
+           strcpy_s(group.groupName, groupName.c_str());
             group.averageGrade = avarage;
             tempBin.write((char*)(&group), sizeof(Group));
             textFile << group.averageGrade << endl;
