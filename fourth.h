@@ -8,48 +8,74 @@ bool five(int num){return num >= 10;}
 bool four(int num) {return num >= 8 && num < 10;}
 bool three(int num) {return num >= 6 && num < 8;}
 
-void outputStudentInfo(const Student& student,fstream& outputFile) {
-    outputFile << "Прізвище: " << student.surname << endl
-        << "Ім'я: " << student.name << endl
-        << "Група: " << student.group << endl
-        << "Математика: " << student.math << endl
-        << "Фізика: " << student.physics << endl
-        << "Англійська: " << student.english << endl
-        << "Українська: " << student.ukrainian << endl << endl;
+void outputStudentInfo(const Student& student,ofstream& output) {
+    
+    cout << setw(5) << left << "|" << setw(10) << student.surname << setw(5) << "|" << setw(10) << student.name << " |" << setw(10) << student.group << setw(5) << "|" << setw(15) << student.math <<
+        setw(5) << "|" << setw(15) << student.physics << setw(5) << "|" << setw(15) << student.english << setw(5) << "|" << setw(15) << student.ukrainian << setw(5) << "|" << endl;
+
+    cout << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
+
+
+
+
+    output << setw(5) << left << "|" << setw(10) << student.surname << setw(5) << "|" << setw(10) << student.name << " |" << setw(10) << student.group << setw(5) << "|" << setw(15) << student.math <<
+        setw(5) << "|" << setw(15) << student.physics << setw(5) << "|" << setw(15) << student.english << setw(5) << "|" << setw(15) << student.ukrainian << setw(5) << "|" << endl;
+
+    output << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
 }
 
 
-
+void outputHeading(ofstream& textFile) {
+    
+    cout << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
+    cout << setw(5) << left << "|" << setw(10) << "Прізвище" << setw(5) << "|" << setw(10) << "Ім'я" << " |" << setw(10) << "Група" << setw(5) << "|" << setw(15) << "Математика" <<
+        setw(5) << "|" << setw(15) << "Фізика" << setw(5) << "|" << setw(15) << "Англійська" << setw(5) << "|" << setw(15) << "Українська" << setw(5) << "|" << endl;
+    textFile << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
+    textFile << setw(5) << left << "|" << setw(10) << "Прізвище" << setw(5) << "|" << setw(10) << "Ім'я" << " |" << setw(10) << "Група" << setw(5) << "|" << setw(15) << "Математика" <<
+        setw(5) << "|" << setw(15) << "Фізика" << setw(5) << "|" << setw(15) << "Англійська" << setw(5) << "|" << setw(15) << "Українська" << setw(5) << "|" << endl;
+    cout << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
+    textFile << setw(123) << setfill('-') << "-" << setfill(' ') << endl;
+}
 
 
 void fourth() {
     int k;
-    
+    ofstream textFile;
+    textFile.open("main.txt", ios::app);
+
     char subject1[SUBJECT_NAME_LENGTH], subject2[SUBJECT_NAME_LENGTH], subject3[SUBJECT_NAME_LENGTH], subject4[SUBJECT_NAME_LENGTH];
     cout << "Виберіть дію:" << endl;
     cout << "1: Вивести студентів, які мають 5 та 4 з двох вибраних предметів" << endl;
     cout << "2: Вивести студентів, які мають 4 та 3 з трьох вибраних предметів" << endl;
     cout << "3: Вивести студентів, які мають 5 та 3 з чотирьох вибраних предметів" << endl;
     cin >> k;
-    
+    textFile << "Виберіть дію:" << endl;
+    textFile << "1: Вивести студентів, які мають 5 та 4 з двох вибраних предметів" << endl;
+    textFile << "2: Вивести студентів, які мають 4 та 3 з трьох вибраних предметів" << endl;
+    textFile << "3: Вивести студентів, які мають 5 та 3 з чотирьох вибраних предметів" << endl;
+    textFile <<endl<< k<<endl;
+
     ifstream file;
-    fstream textFile;
    
     switch (k) {
     case 1:
         cout << "Введіть назву першого предмета-> ";
+        textFile << "Введіть назву першого предмета-> ";
         cin.get();
         cin.getline(subject1, SUBJECT_NAME_LENGTH);
+        textFile << subject1 << endl;
         cout << "Введіть назву другого предмета-> ";
+        textFile << "Введіть назву другого предмета-> ";
+
         cin.getline(subject2, SUBJECT_NAME_LENGTH);
+        textFile << subject2 << endl;
 
         file.open("students.bin", ios::binary);
-        textFile.open("4.txt", ios::out);
 
         if (file.is_open() && textFile.is_open()) {
             Student student;
             bool subject1Bool = false, subject2Bool = false;
-
+            outputHeading(textFile);
 
             while (file.read((char*)(&student), sizeof(Student))) {
                 subject1Bool = false;
@@ -110,9 +136,12 @@ void fourth() {
         }
         else {
             cout << "Помилка при відкритті файлу." << endl;
+            textFile << "Помилка при відкритті файлу." << endl;
+
         }
         break;
     case 2:
+        
         cout << "Введіть назву першого предмета-> ";
         cin.get();
         cin.getline(subject1, SUBJECT_NAME_LENGTH);
@@ -120,16 +149,22 @@ void fourth() {
         cin.getline(subject2, SUBJECT_NAME_LENGTH);
         cout << "Введіть назву третього предмета-> ";
         cin.getline(subject3, SUBJECT_NAME_LENGTH);
+        textFile << "Введіть назву першого предмета-> ";
+        textFile << subject1 << endl;
+        textFile << "Введіть назву другого предмета-> ";
+        textFile << subject2 << endl;
+        textFile << "Введіть назву третього предмета-> ";
+        textFile << subject3 << endl;
 
 
         file.open("students.bin", ios::binary);
-        textFile.open("4.txt", ios::out);
+        
 
         if (file.is_open() && textFile.is_open()) {
             Student student;
-         
             bool subject1Bool = false, subject2Bool = false,subject3Bool = false;
-        
+            outputHeading(textFile);
+
 
             while (file.read((char*)(&student), sizeof(Student))) {
                 subject1Bool = false;
@@ -202,10 +237,7 @@ void fourth() {
 
 
                 if (subject1Bool && subject2Bool && subject3Bool) {
-
-
                     outputStudentInfo(student, textFile);
-
                 }
 
             }
@@ -216,6 +248,8 @@ void fourth() {
         }
         else {
             cout << "Помилка при відкритті файлу." << endl;
+            textFile << "Помилка при відкритті файлу." << endl;
+
         }
 
         break;
@@ -232,14 +266,26 @@ void fourth() {
             cout << "Введіть назву четвертого предмета-> ";
             cin.getline(subject4, SUBJECT_NAME_LENGTH);
 
+            textFile << "Введіть назву першого предмета-> ";
+            textFile << subject1 << endl;
+            textFile << "Введіть назву другого предмета-> ";
+            textFile << subject2 << endl;
+            textFile << "Введіть назву третього предмета-> ";
+            textFile << subject3 << endl;
+            textFile << "Введіть назву четвертого предмета-> ";
+            textFile << subject4 << endl;
+
+
+
+
 
             file.open("students.bin", ios::binary);
-            textFile.open("4.txt", ios::out);
+          
 
             if (file.is_open() && textFile.is_open()) {
                 Student student;
-
                 bool subject1Bool = false, subject2Bool = false, subject3Bool = false,subject4Bool=false;
+                outputHeading(textFile);
 
 
                 while (file.read((char*)(&student), sizeof(Student))) {
@@ -344,6 +390,8 @@ void fourth() {
             }
             else {
                 cout << "Помилка при відкритті файлу." << endl;
+                textFile << "Помилка при відкритті файлу." << endl;
+
             }
     }
 

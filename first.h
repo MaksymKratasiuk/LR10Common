@@ -52,7 +52,7 @@ void smallestAvarage() {
 
            
 
-            fstream textFile("main.txt", ios::out,ios::app);
+            ofstream textFile("main.txt",ios::app);
             
 
             cout << "\nСтудент з найменшим середнім балом:\n";
